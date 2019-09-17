@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://yoursite.com/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:locale" content="en">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Hexo">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main">
+  
+    <article id="post-README" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/09/17/README/" class="article-date">
+  <time datetime="2019-09-17T15:59:23.279Z" itemprop="datePublished">2019-09-17</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Git笔记"><a href="#Git笔记" class="headerlink" title="Git笔记"></a>Git笔记</h1><h2 id="常用指令"><a href="#常用指令" class="headerlink" title="常用指令"></a>常用指令</h2><table>
+<thead>
+<tr>
+<th align="left">命令</th>
+<th align="left">注解</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">ssh-keygen -t rsa -C “邮箱地址”</td>
+<td align="left">生成SSH证书</td>
+</tr>
+<tr>
+<td align="left">cat ~/.ssh/id_rsa.pub</td>
+<td align="left">查看SSH证书</td>
+</tr>
+<tr>
+<td align="left">gitk</td>
+<td align="left">启动图形化界面</td>
+</tr>
+<tr>
+<td align="left">git remote add 远程仓库名 远程仓库地址</td>
+<td align="left">添加远程仓库地址</td>
+</tr>
+<tr>
+<td align="left">git remote rm 远程仓库名</td>
+<td align="left">删除远程仓库</td>
+</tr>
+<tr>
+<td align="left">git remote set-url 远程仓库名 远程仓库地址</td>
+<td align="left">修改远程仓库地址</td>
+</tr>
+<tr>
+<td align="left">git checkout 文件名</td>
+<td align="left">还原文件到上一个版本</td>
+</tr>
+<tr>
+<td align="left">## bash常见命令</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left"><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">pwd (Print Working Directory) 查看当前目录</span><br><span class="line">cd (Change Directory) 切换目录</span><br><span class="line">ls (List)查看当前目录下的内容</span><br><span class="line">mkdir (Make Directory)创建目录</span><br><span class="line">touch 创建文件,如 touch index.html</span><br><span class="line">cat 查看全部文件内容,如 cat index.html</span><br><span class="line">rm (remove) 删除文件,删除空文件夹,如 rm index.html , rm Blog</span><br><span class="line">rm -rf 强制删除文件夹,非空文件夹也可以删除</span><br><span class="line">rmdir (Remove Directory) 删除文件夹,只能删除空文件夹</span><br><span class="line">mv (move) 移动文件或重命名,如 mv index.html ./demo/index.html</span><br><span class="line">cp (copy) 复制文件,如 cp index.html ./demo/index.html</span><br><span class="line">head 查看文件前几行,如 head -5 index.html</span><br><span class="line">history 查看操作历史</span><br><span class="line">whoami 查看当前用户</span><br></pre></td></tr></table></figure></td>
+<td align="left"></td>
+</tr>
+</tbody></table>
+<h2 id="资料文件"><a href="#资料文件" class="headerlink" title="资料文件"></a>资料文件</h2><ul>
+<li><a href="https://juejin.im/post/5a54386af265da3e3b7a6317" target="_blank" rel="noopener">如何优雅地使用 Git - 掘金</a></li>
+<li><a href="https://juejin.im/post/5afc5242f265da0b7f44bee4" target="_blank" rel="noopener">优雅的提交你的 Git Commit Message - 掘金</a></li>
+<li><a href="https://www.zhihu.com/question/20070065/answer/79557687" target="_blank" rel="noopener">如何使用 GitHub？ - 知乎</a></li>
+<li><a href="https://github.com/k88hudson/git-flight-rules/blob/master/README_zh-CN.md" target="_blank" rel="noopener">Git飞行规则 - GitHub</a></li>
+<li><a href="https://github.com/521xueweihan/git-tips" target="_blank" rel="noopener">Git的奇技淫巧 - Github</a></li>
+<li><a href="https://backlog.com/git-tutorial/cn/" target="_blank" rel="noopener">猴子都能懂的GIT入门 - 贝格乐（Backlog）</a></li>
+<li><a href="https://www.cnblogs.com/savorboard/p/bash-guide.html" target="_blank" rel="noopener">10 分钟学会Linux常用 bash命令 - Savorboard - 博客园</a><h2 id="Git-Gui"><a href="#Git-Gui" class="headerlink" title="Git Gui"></a>Git Gui</h2></li>
+<li><a href="https://www.sourcetreeapp.com/" target="_blank" rel="noopener">Sourcetree</a></li>
+<li><a href="https://tortoisegit.org/" target="_blank" rel="noopener">TortoiseGit</a><h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2></li>
+<li><a href="https://www.liaoxuefeng.com/wiki/896043488029600" target="_blank" rel="noopener">史上最浅显易懂的Git教程 - 廖雪峰的官方网站</a></li>
+<li><a href="https://git-scm.com/book/zh/v2" target="_blank" rel="noopener">Pro Git v2 - Scott Chacon</a></li>
+<li><a href="https://time.geekbang.org/course/intro/100021601" target="_blank" rel="noopener">玩转Git三剑客 - 极客时间</a></li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/09/17/README/" data-id="ck0o0w04c00004kv95byfgca8" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/09/17/hello-world/" class="article-date">
+  <time datetime="2019-09-17T15:52:48.704Z" itemprop="datePublished">2019-09-17</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/09/17/hello-world/">Hello World</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="sheng1024-blog"><a href="#sheng1024-blog" class="headerlink" title="sheng1024 blog"></a>sheng1024 blog</h3><p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/09/17/hello-world/" data-id="ck0o0qh610000zkv9cqqjn7nx" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">September 2019</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/09/17/README/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2019/09/17/hello-world/">Hello World</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>
