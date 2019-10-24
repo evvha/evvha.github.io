@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="author" content="Sheng1024">
+    
+    <meta name="description" content="Sheng1024 的个人博客，学习笔记">
+    
+    
+    
+    
+    
+    
+    <title>React 笔记 | Sheng1024</title>
+    <link href="”https://sheng1024.github.io“" rel="”prefetch”">
+
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+<link rel="stylesheet" href="/css/aos.css">
+<link rel="stylesheet" href="/css/style.css">
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/aos.js"></script>
+    <script src="/js/highslide/highslide-full.min.js"></script>
+    <link rel="stylesheet" href="/js/highslide/highslide.css">
+    <style type="text/css">
+        @media (max-width: 768px) {
+            body {
+                background-color: #f0f0f0;
+                background: url('/imgs/xsbg.gif');
+                background-attachment: fixed;
+            }
+        }
+    </style>
+    
+    <!--<script type="text/javascript">
+      if (document.images) {
+        var avatar = new Image();
+        avatar.src = '/imgs/avatar.jpg'
+        var previews = 'preview1.jpg,preview2.jpg,preview3.jpg,preview4.jpg'.split(',')
+        var previewsPreLoad = []
+        for(var i = 0; i < length; i++) {
+          previewsPreLoad.push(new Image())
+          previewsPreLoad[previewsPreLoad.length - 1].src = '/imgs/preview' + previews[i]
+        }
+      }
+    </script>-->
+</head></html>
+<body>
+    <!-- 背景轮播图功能 -->
+    <section class="hidden-xs">
+    <ul class="cb-slideshow">
+        <li><span>天若</span></li>
+        <li><span>有情</span></li>
+        <li><span>天亦老</span></li>
+        <li><span>我为</span></li>
+        <li><span>长者</span></li>
+        <li><span>续一秒</span></li>
+    </ul>
+</section>
+    <!-- 欧尼酱功能, 谁用谁知道 -->
+    
+    <header class="navbar navbar-inverse" id="gal-header">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed"
+                    data-toggle="collapse" data-target=".bs-navbar-collapse"
+                    aria-expanded="false">
+                <span class="fa fa-lg fa-reorder"></span>
+            </button>
+            <a href="https://sheng1024.github.io">
+                
+                <style>
+                    #gal-header .navbar-brand {
+                        height: 54px;
+                        line-height: 24px;
+                        font-size: 28px;
+                        opacity: 1;
+                        background-color: rgba(0,0,0,0);
+                        text-shadow: 0 0 5px #fff,0 0 10px #fff,0 0 15px #fff,0 0 20px #228DFF,0 0 35px #228DFF,0 0 40px #228DFF,0 0 50px #228DFF,0 0 75px #228DFF;
+                    }
+                </style>
+                <!-- 这里使用文字(navbar_text or config.title) -->
+                <div class="navbar-brand">Sheng1024</div>
+                
+            </a>
+        </div>
+        <div class="collapse navbar-collapse bs-navbar-collapse">
+            <ul class="nav navbar-nav" id="menu-gal">
+                
+                
+                <li class="">
+                    <a href="/">
+                        <i class="fa fa-home"></i>首页
+                    </a>
+                </li>
+                
+                
+                
+                <li class="">
+                    <a href="/archives">
+                        <i class="fa fa-library"></i>归档
+                    </a>
+                </li>
+                
+                
+                
+                
+                <li class="dropdown">
+                    <!-- TODO 添加hover dropdown效果 -->
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"
+                       aria-haspopup="true" aria-expanded="false" data-hover="dropdown">
+                        <i class="fa fa-list"></i>分类
+                    </a>
+                    <ul class="dropdown-menu">
+                        
+                        
+                        <li>
+                            <a href="/categories/web前端/">web前端</a>
+                        </li>
+                        
+                        
+                        
+                    </ul>
+                </li>
+                
+                
+                
+                
+                
+                <li class="dropdown">
+                    <!-- TODO 添加hover dropdown效果 -->
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"
+                       aria-haspopup="true" aria-expanded="false" data-hover="dropdown">
+                        <i class="fa fa-tags"></i>标签
+                    </a>
+                    <ul class="dropdown-menu">
+                        
+                        
+                        <li>
+                            <a href="/tags/git/">git</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/tags/bash/">bash</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/tags/ES6/">ES6</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/tags/ECMAScript-6/">ECMAScript 6</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/tags/阮一峰/">阮一峰</a>
+                        </li>
+                        
+                        
+                        <li>
+                            <a href="/tags">...</a>
+                        </li>
+                        
+                        
+                    </ul>
+                </li>
+                
+                
+                
+                
+                <li class="">
+                    <a href="/about">
+                        <i class="fa fa-user"></i>关于我
+                    </a>
+                </li>
+                
+                
+            </ul>
+        </div>
+    </div>
+</header>
+    <div id="gal-body">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 gal-right" id="mainstay">
+                    
+<article class="article well article-body" id="article">
+    <div class="breadcrumb">
+        <i class="fa fa-home"></i>
+        <a href="https://sheng1024.github.io">Sheng1024</a>
+        >
+        <span>React 笔记</span>
+    </div>
+    <!-- 大型设备详细文章 -->
+    <div class="hidden-xs">
+        <div class="title-article">
+            <h1>
+                <a href="/2019/10/24/React 笔记/">React 笔记</a>
+            </h1>
+        </div>
+        <div class="tag-article">
+            
+            <span class="label label-gal">
+                <i class="fa fa-tags"></i>
+                
+                <a href="/tags/React/">React</a>
+                
+            </span>
+            
+            <span class="label label-gal">
+                <i class="fa fa-calendar"></i> 2019-10-24
+            </span>
+            
+        </div>
+    </div>
+    <!-- 小型设备详细文章 -->
+    <div class="visible-xs">
+        <center>
+            <div class="title-article">
+                <h4>
+                    <a href="/2019/10/24/React 笔记/">React 笔记</a>
+                </h4>
+            </div>
+            <p>
+                <i class="fa fa-calendar"></i> 2019-10-24
+            </p>
+            <p>
+                
+                <i class="fa fa-tags"></i>
+                
+                <a href="/tags/React/">React</a>
+                
+                
+                
+            </p>
+        </center>
+    </div>
+    <div class="content-article">
+        <p>[TOC]</p>
+<h2 id="React"><a href="#React" class="headerlink" title="React"></a><a href="https://zh-hans.reactjs.org/docs/getting-started.html" target="_blank" rel="noopener">React</a></h2><h3 id="React-开发环境搭建"><a href="#React-开发环境搭建" class="headerlink" title="React 开发环境搭建"></a>React 开发环境搭建</h3><h3 id="创建项目"><a href="#创建项目" class="headerlink" title="创建项目"></a>创建项目</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">npm install -g create-react-app</span><br><span class="line">create-react-app demo01</span><br><span class="line"><span class="built_in">cd</span> demo01</span><br><span class="line">npm start</span><br><span class="line">dir</span><br></pre></td></tr></table></figure>
+
+<p>目录 <code>serviceWorker.js</code><br>这个是用于写移动端开发的，PWA 必须用到这个文件，有了这个文件，就相当于有了离线浏览的功能</p>
+<h3 id="基本格式"><a href="#基本格式" class="headerlink" title="基本格式"></a>基本格式</h3><h4 id="index-js"><a href="#index-js" class="headerlink" title="index.js"></a>index.js</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">"react"</span> <span class="comment">//有状态无状态组件都需要引入，不然无法使用jsx语法</span></span><br><span class="line"><span class="keyword">import</span> ReactDom <span class="keyword">from</span> <span class="string">"react-dom"</span></span><br><span class="line"><span class="keyword">import</span> App <span class="keyword">from</span> <span class="string">"./App"</span></span><br><span class="line">ReactDom.render(<span class="xml"><span class="tag">&lt;<span class="name">App</span> /&gt;</span>,document.getElementById("root"))</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="App-js"><a href="#App-js" class="headerlink" title="App.js"></a>App.js</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React,&#123;Component&#125; <span class="keyword">from</span> <span class="string">"react"</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="class"><span class="keyword">class</span> <span class="title">App</span> <span class="keyword">extends</span> <span class="title">Component</span> </span>&#123;</span><br><span class="line">    <span class="keyword">constructor</span>()&#123;</span><br><span class="line">        <span class="keyword">super</span>()</span><br><span class="line">        <span class="keyword">this</span>.state=&#123;&#125;</span><br><span class="line">    &#125;</span><br><span class="line">    render()&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span>Hello World<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>禁止直接操作 this.state 中的数据</p>
+<p><a href="https://zh-hans.reactjs.org/docs/typechecking-with-proptypes.html" target="_blank" rel="noopener">使用 PropTypes 进行类型检查</a></p>
+<p><code>ref={(input)=&gt;this.input=input}</code><br>this.setState()是异步的</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> PropTypes <span class="keyword">from</span> <span class="string">'prop-types'</span>;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Greeting</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span> </span>&#123;</span><br><span class="line">  render() &#123;</span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">      &lt;h1&gt;Hello, &#123;<span class="keyword">this</span>.props.name&#125;&lt;<span class="regexp">/h1&gt;</span></span><br><span class="line"><span class="regexp">    );</span></span><br><span class="line"><span class="regexp">  &#125;</span></span><br><span class="line"><span class="regexp">&#125;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">Greeting.propTypes = &#123;</span></span><br><span class="line"><span class="regexp">  name: PropTypes.string</span></span><br><span class="line"><span class="regexp">&#125;;</span></span><br></pre></td></tr></table></figure>
+
+<p>性能优化</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">shouldComponentUpdate(nextProps,nextState)&#123;</span><br><span class="line">    <span class="keyword">return</span> nextProps.content !== <span class="keyword">this</span>.props.content</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><ul>
+<li>打印 e 展开 target 为 null, 直接打印 e.target 为 DOM 元素</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React,&#123;Component,Fragment&#125; <span class="keyword">from</span> <span class="string">'react'</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="class"><span class="keyword">class</span> <span class="title">Service</span> <span class="keyword">extends</span> <span class="title">Component</span> </span>&#123;</span><br><span class="line">  <span class="keyword">constructor</span>(props)&#123;</span><br><span class="line">    <span class="keyword">super</span>(props)</span><br><span class="line">    <span class="keyword">this</span>.state=&#123;</span><br><span class="line">      inputValue:<span class="string">'js'</span>,</span><br><span class="line">      serviceLists:[],</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  render()&#123;</span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">      &lt;Fragment&gt;</span><br><span class="line">        &lt;div&gt;</span><br><span class="line">          &lt;input type=<span class="string">"text"</span> value=&#123;<span class="keyword">this</span>.state.inputValue&#125; onChange=&#123;<span class="keyword">this</span>.inputChange.bind(<span class="keyword">this</span>)&#125; /&gt;</span><br><span class="line">          &lt;button&gt;+<span class="number">1</span>&lt;<span class="regexp">/button&gt;</span></span><br><span class="line"><span class="regexp">        &lt;/</span>div&gt;</span><br><span class="line">        &lt;ul&gt;</span><br><span class="line">          &lt;li&gt;<span class="number">1</span>&lt;<span class="regexp">/li&gt;</span></span><br><span class="line"><span class="regexp">          &lt;li&gt;2&lt;/</span>li&gt;</span><br><span class="line">          &lt;li&gt;<span class="number">3</span>&lt;<span class="regexp">/li&gt;</span></span><br><span class="line"><span class="regexp">        &lt;/u</span>l&gt;</span><br><span class="line">      &lt;<span class="regexp">/Fragment&gt;</span></span><br><span class="line"><span class="regexp">    )</span></span><br><span class="line"><span class="regexp">  &#125;</span></span><br><span class="line"><span class="regexp">  inputChange(e)&#123;</span></span><br><span class="line"><span class="regexp">    console.log(e)</span></span><br><span class="line"><span class="regexp">    console.log(e.target)</span></span><br><span class="line"><span class="regexp">    this.setState(&#123;</span></span><br><span class="line"><span class="regexp">      inputValue:e.target.value,</span></span><br><span class="line"><span class="regexp">    &#125;)</span></span><br><span class="line"><span class="regexp">  &#125;</span></span><br><span class="line"><span class="regexp">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="Redux"><a href="#Redux" class="headerlink" title="Redux"></a><a href="http://cn.redux.js.org/" target="_blank" rel="noopener">Redux</a></h2><p><a href="http://www.jspang.com/posts/2019/06/20/redux.html" target="_blank" rel="noopener">Redux 免费视频教程（共 24 集） | 技术胖-胜洪宇关注 web 前端技术-前端免费视频第一博客</a></p>
+<p><strong><a href="http://www.jspang.com/posts/2019/06/20/redux.html" target="_blank" rel="noopener">Redux 免费视频教程（共 24 集） | 技术胖-胜洪宇关注 web 前端技术-前端免费视频第一博客</a></strong></p>
+<h2 id="React-Router"><a href="#React-Router" class="headerlink" title="React Router"></a><a href="http://react-guide.github.io/react-router-cn/" target="_blank" rel="noopener">React Router</a></h2><p><strong><a href="http://www.jspang.com/posts/2019/07/31/react-router.html" target="_blank" rel="noopener">React Router 免费文字视频教程（共 9 集） | 技术胖-胜洪宇关注 web 前端技术-前端免费视频第一博客</a></strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install --save react-router-dom</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; BrowserRouter <span class="keyword">as</span> Router, Route, Link &#125; <span class="keyword">from</span> <span class="string">'react-router-dom'</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Index</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="xml"><span class="tag">&lt;<span class="name">h2</span>&gt;</span>JSPang.com<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">List</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="xml"><span class="tag">&lt;<span class="name">h2</span>&gt;</span>List-Page<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">AppRouter</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    &lt;Router&gt;</span><br><span class="line">      &lt;ul&gt;</span><br><span class="line">        &lt;li&gt;</span><br><span class="line">          &#123;<span class="string">' '</span>&#125;</span><br><span class="line">          &lt;Link to=<span class="string">'/'</span>&gt;首页&lt;<span class="regexp">/Link&gt;&#123;' '&#125;</span></span><br><span class="line"><span class="regexp">        &lt;/</span>li&gt;</span><br><span class="line">        &lt;li&gt;</span><br><span class="line">          &lt;Link to=<span class="string">'/list/'</span>&gt;列表&lt;<span class="regexp">/Link&gt;&#123;' '&#125;</span></span><br><span class="line"><span class="regexp">        &lt;/</span>li&gt;</span><br><span class="line">      &lt;<span class="regexp">/ul&gt;</span></span><br><span class="line"><span class="regexp">      &lt;Route path='/</span><span class="string">' exact component=&#123;Index&#125; /&gt;</span></span><br><span class="line"><span class="string">      &lt;Route path='</span>/list/<span class="string">' component=&#123;List&#125; /&gt;</span></span><br><span class="line"><span class="string">    &lt;/Router&gt;</span></span><br><span class="line"><span class="string">  );</span></span><br><span class="line"><span class="string">&#125;</span></span><br><span class="line"><span class="string">export default AppRouter;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="HOOK"><a href="#HOOK" class="headerlink" title="HOOK"></a><a href="https://react-1251415695.cos-website.ap-chengdu.myqcloud.com/docs/hooks-overview.html" target="_blank" rel="noopener">HOOK</a></h2><p>React 16.8 的新增特性</p>
+<h3 id="useState"><a href="#useState" class="headerlink" title="useState"></a><code>useState</code></h3><p>返回一对值：当前 state 以及更新 state 的函数<br>唯一参数：初始 state<br>类似：<code>this.setState</code>,但是它不会把新的 state 和旧的 state 进行合并<br>Hook 是一些可以让你在函数组件里钩入 React state 及生命周期等特性的函数</p>
+<h3 id="useEffect"><a href="#useEffect" class="headerlink" title="useEffect"></a><code>useEffect</code></h3><p>数据获取、设置订阅、手动更改 React 组件中的 DOM 都属于副作用</p>
+<blockquote>
+<p>可以把 <code>useEffect</code> Hook 看做<code>componentDidMount</code>,<code>componentDidUpdate</code>,<code>componentWillUnmount</code>这三个函数的组合</p>
+</blockquote>
+<p><strong>useEffect 做了什么</strong> 告诉 React 组件需要在渲染后执行某些操作</p>
+<p><strong>为什么在组件内部调用 useEffect</strong> 可以在 effect 只不过直接访问 state 变量。Hook 使用了 JavaScript 的闭包机制</p>
+<p>传递给 <code>useEffect</code>的函数在每次渲染中都会有所不同，这正是我们可以在 effect 中获取最新的 state 的值的原因，每次重新渲染，都会生成新的 effect</p>
+<blockquote>
+<p>与<code>componentDidMount</code>或<code>componentDidUpdate</code>不同，使用<code>useEffect</code>调度的 effect 不会阻塞浏览器更新屏幕</p>
+</blockquote>
+<p>如果你的 effect 返回一个函数，React 将会在执行清除操作时调用它</p>
+<p><strong>使用 Effect 的提示</strong></p>
+<ul>
+<li><p><strong>使用多个 Effect 实现关注点分离</strong> ，React 将按照 effect 声明的顺序依次调用组件中的每一个 effect</p>
+</li>
+<li><p><strong>为什么每次更新的时候都要运行 Effect</strong> 次默认行为保证了一致性，避免了在 class 组建中因为灭有处理更新逻辑而导致常见的 bug</p>
+</li>
+<li><p><strong>通过跳过 Effect 进行性能优化</strong> 传递数组作为<code>useEffect</code>的第二个可选参数</p>
+<blockquote>
+<p><strong>注意</strong></p>
+<p>如果你要使用此优化方式，请确保数组中包含了<strong>所有外部这座用于中会随时间变化并且在 effect 中使用的变量</strong> ，否则你的代码会引用到先前渲染中的旧变量</p>
+<p>如果想执行只运行一次的 effect （仅在组件挂载和写在时执行），可以传递一个空数组（<code>[]</code>）作为第二个参数。</p>
+</blockquote>
+</li>
+</ul>
+<h3 id="HOOK-规则"><a href="#HOOK-规则" class="headerlink" title="HOOK 规则"></a>HOOK 规则</h3><p><strong>Hook 使用规则</strong></p>
+<blockquote>
+<ul>
+<li><p>只能在<strong>函数最外层</strong>调用 Hook。不要在循环、条件判断或者子函数中调用。</p>
+</li>
+<li><p>只能在<strong>React 的函数组件</strong>中调用 Hook。不要在其他 JavaScript 函数中调用。（还可以在自定义的 Hook 中调用）</p>
+</li>
+</ul>
+</blockquote>
+<p><strong>ESLint 插件</strong> <code>eslint-plugin-react-hooks</code></p>
+<p>如果我们想要有条件地执行一个 effect，可以将判断放到 Hook 的内部</p>
+<h3 id="自定义-Hook"><a href="#自定义-Hook" class="headerlink" title="自定义 Hook"></a>自定义 Hook</h3><p>自定义 Hook 是一个函数，其名称以“use”开头，函数内部可以调用其他的 Hook</p>
+<p>自定义 Hook 是一种自然遵循 Hook 设计的约定，并不是 React 的特性</p>
+<p>自定义 Hook 是一种重用状态逻辑的机制（例如设置为订阅并存储当前值），所以每次使用自定义 Hook 时，其中所有的 state 和副作用都是完全隔离的</p>
+<p>编写一个<code>useReducer</code>的 Hook ,使用 reducer 的方式来管理组件的内部 state</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">useReducer</span>(<span class="params">reducer, initialState</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> [state, setState] = useState(initialState);</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">dispatch</span>(<span class="params">action</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">const</span> nextState = reducer(state, action);</span><br><span class="line">    setState(nextState);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> [state, dispatch];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>在组件中使用它</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Todos</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> [todos, dispatch] = useReducer(todosReducer, []);</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">handleAddClick</span>(<span class="params">text</span>) </span>&#123;</span><br><span class="line">    dispatch(&#123; <span class="attr">type</span>: <span class="string">'add'</span>, text &#125;);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// ...</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="Hook-API-索引"><a href="#Hook-API-索引" class="headerlink" title="Hook API 索引"></a>Hook API 索引</h3><h4 id="基础-Hook"><a href="#基础-Hook" class="headerlink" title="基础 Hook"></a>基础 Hook</h4><h5 id="useState-1"><a href="#useState-1" class="headerlink" title="useState"></a>useState</h5><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> [state, setState] = useState(initialState);</span><br></pre></td></tr></table></figure>
+
+<p>返回一个 state，以及更新 state 的函数</p>
+<p>在初始渲染器件，返回的状态（<code>state</code>）与传入的第一个参数（<code>initialState</code>）值相同</p>
+<p><code>setState</code>函数用于更新 state。它接受一个新的 state 值并将组件的一次重新渲染加入队列</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">setState(newState);</span><br></pre></td></tr></table></figure>
+
+<p>在后续的重新渲染中，<code>useState</code>返回的第一个值将始终是更新后最新的 state</p>
+<blockquote>
+<p><strong>注意</strong></p>
+<p>React 会确保<code>setState</code>函数的标识是稳定的，并且不会在组件重新渲染时发生变化。这就是为什么可以安全地从<code>useEffect</code>或<code>useCallback</code>的依赖队列表中省略<code>setState</code></p>
+</blockquote>
+<p>函数式更新</p>
+<p>如果新的 state 需要通过使用先前的 state 计算得出，那么可以将函数传递给<code>setState</code>。该函数将接收先前的 state，并返回一个更新后的值</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Counter</span>(<span class="params">&#123; initialCount &#125;</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> [count, setCount] = useState(initialCount);</span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    &lt;&gt;</span><br><span class="line">      Count: &#123;count&#125;</span><br><span class="line">      &lt;button onClick=&#123;() =&gt; setCount(initialCount)&#125;&gt;Reset&lt;<span class="regexp">/button&gt;</span></span><br><span class="line"><span class="regexp">      &lt;button onClick=&#123;() =&gt; setCount((prevCount) =&gt; prevCount + 1)&#125;&gt;+&lt;/</span>button&gt;</span><br><span class="line">      &lt;button onClick=&#123;() =&gt; setCount(<span class="function">(<span class="params">prevCount</span>) =&gt;</span> prevCount - <span class="number">1</span>)&#125;&gt;-<span class="xml"><span class="tag">&lt;/<span class="name">button</span>&gt;</span></span></span><br><span class="line">    &lt;<span class="regexp">/&gt;</span></span><br><span class="line"><span class="regexp">  );</span></span><br><span class="line"><span class="regexp">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p><strong>注意</strong></p>
+<p>与 class 组件中的<code>setState</code>方法不同，<code>useState</code>不会自动合并更新对象，你可以使用函数式的<code>setState</code>结合展开开运算符来达到合并更新对象的效果</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&gt; setState(<span class="function">(<span class="params">prevState</span>) =&gt;</span> &#123;</span><br><span class="line">&gt;   <span class="comment">// 也可以使用 Object.assign</span></span><br><span class="line">&gt;   <span class="keyword">return</span> &#123; ...prevState, ...updatedValues &#125;;</span><br><span class="line">&gt; &#125;);</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<p>惰性初始 state</p>
+<p><code>initialState</code>参数只会在组件的初始渲染中起作用，后续渲染时会被忽略</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> [state, setState] = useState(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">const</span> initialState = someExpensiveComputation(props);</span><br><span class="line">  <span class="keyword">return</span> initialState;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<p>跳过 state 更新</p>
+<p>调用 State Hook 的更新函数并传入当前的 state 时，React 将跳过子组件的渲染及 effect 的执行。（React 使用 <a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Object/is" target="_blank" rel="noopener">Object.is</a> 比较算法来比较 state）</p>
+<h5 id="useEffect-1"><a href="#useEffect-1" class="headerlink" title="useEffect"></a>useEffect</h5><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">useEffect(didUpdate);</span><br></pre></td></tr></table></figure>
+
+<p>该 Hook 接收一个包含命令式，且可能有副作用代码的函数</p>
+<p>在函数组件主体内（这里指在 React 渲染阶段）改变 DOM、添加订阅、设置定时器、记录日志以及执行其他包含副作用的操作都是不被允许的，因为这可能会产生莫名其妙的 bug 并破坏 UI 的一致性</p>
+<p>使用<code>useEffect</code>完成副作用操作。赋值给<code>useEffect</code>的函数会在组件渲染到屏幕之后执行，你可以把 effect 看做从 React 的纯函数式操作通往命令式世界的逃生通道</p>
+<p>清除 effect</p>
+<p>为防止内存泄露，清除函数会在组件卸载钱执行。另外，如果组件多次渲染（通常如此），则<strong>执行下一个 effect 之前，上一个 effect 就已被清除</strong></p>
+<p>effect 的执行时机</p>
+<p>虽然<code>useEffect</code>会在浏览器绘制后延迟执行，单会保证在任何新的渲染钱执行。React 将在组件更新前刷新上一轮渲染的 effect</p>
+<p>effect 的条件执行</p>
+<p>给<code>useEffect</code>传递第二个参数</p>
+<h5 id="useContext"><a href="#useContext" class="headerlink" title="useContext"></a>useContext</h5><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> value = useContext(MyContext);</span><br></pre></td></tr></table></figure>
+
+<p>接受一个 context 对象（<code>React.createContext</code>的返回值）并返回该 context 的当前值。当前的 context 值由上层组件中距离当前组件最近的 <code>&lt;MyContext.Provider&gt;</code>的<code>value</code>prop 决定</p>
+<p>当组件上层最近的 <code>&lt;MyContext.Provider&gt;</code>更新时，该 Hook 会触发重新渲染，并使用最新传递给<code>MyContext</code>provider 的 context <code>value</code>值</p>
+<p>调用了<code>useContext</code>的组件总会在 context 值变化时重新渲染</p>
+<blockquote>
+<p><strong>提示</strong></p>
+<p>如果你在接触 Hook 前已经对 context API 比较熟悉，那应该可以理解，<code>useContext(MyContext)</code>相当于 class 组件中的<code>static contextType=MyContext</code>或者<code>&lt;MyContext.consumer&gt;</code></p>
+<p><code>useContext(MyContext)</code>只是让你能够读取 context 的值以及订阅 context 的变化。你仍然需要在上层组件树中使用<code>&lt;MyContext.Provider&gt;</code>来为下层组件提供 context</p>
+</blockquote>
+<h4 id="额外的-Hook"><a href="#额外的-Hook" class="headerlink" title="额外的 Hook"></a>额外的 Hook</h4><h5 id="useReducer"><a href="#useReducer" class="headerlink" title="useReducer"></a>useReducer</h5><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> [state, dispatch] = useReduer(reducer, initialArg, init);</span><br></pre></td></tr></table></figure>
+
+<p><code>useState</code>的替代方案。它接受一个形如<code>(state,action)=&gt;newState</code>的 reducer，并返回当前的 state 以及与其配套的<code>diapatch</code></p>
+<h2 id="文档资料"><a href="#文档资料" class="headerlink" title="文档资料"></a>文档资料</h2><ul>
+<li><a href="https://juejin.im/post/5d817a15f265da039929a761" target="_blank" rel="noopener">技术胖的 2019 新版 React 全家桶免费视频（84 集） - 掘金</a></li>
+<li><a href="https://juejin.im/post/5d085be0f265da1bac401937" target="_blank" rel="noopener">掘金最污的 React16.x 图文视频教程(2 万 5 千字长文-慎入) - 掘金</a></li>
+</ul>
+<h2 id="课后拓展"><a href="#课后拓展" class="headerlink" title="课后拓展"></a>课后拓展</h2><p>serviceWorker<br>PWA</p>
+<p>如何将项目发布到服务器</p>
+
+    </div>
+</article>
+
+
+                </div>
+                <aside class="col-md-4 gal-left" id="sidebar">
+    <!-- 此为sidebar的搜索框, 非搜索结果页面 -->
+<aside id="sidebar-search">
+    <div class="search hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+        <form class="form-inline clearfix" id="search-form" method="get"
+              action="/search/index.html">
+            <input type="text" name="s" class="form-control" id="searchInput" placeholder="搜索文章~" autocomplete="off">
+            <button class="btn btn-danger btn-gal" type="submit">
+                <i class="fa fa-search"></i>
+            </button>
+        </form>
+    </div>
+</aside>
+    <aside id="sidebar-author">
+    <div class="panel panel-gal" data-aos="flip-right" data-aos-duration="3000">
+        <div class="panel-heading" style="text-align: center">
+            <i class="fa fa-quote-left"></i>
+            Sheng1024
+            <i class="fa fa-quote-right"></i>
+        </div>
+        <div class="author-panel text-center">
+            <img src="/imgs/avatar.jpg" width="140" height="140"
+                 alt="个人头像" class="author-image">
+            <p class="author-description"><p>Sheng1024 的个人博客，学习笔记</p>
+</p>
+        </div>
+    </div>
+</aside>
+    
+    <aside id="sidebar-recent_comments">
+    <div class="panel panel-gal recent hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+        <div class="panel-heading">
+            <i class="fa fa-comments"></i>
+            最新评论
+            <i class="fa fa-times-circle panel-remove"></i>
+            <i class="fa fa-chevron-circle-up panel-toggle"></i>
+        </div>
+        <ul class="list-group list-group-flush"></ul>
+    </div>
+</aside>
+    
+    <!-- 要配置好leancloud才能开启此小工具 -->
+    
+    
+    <aside id="sidebar-recent_posts">
+    <div class="panel panel-gal recent hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+        <div class="panel-heading">
+            <i class="fa fa-refresh"></i>
+            近期文章
+            <i class="fa fa-times-circle panel-remove"></i>
+            <i class="fa fa-chevron-circle-up panel-toggle"></i>
+        </div>
+        <ul class="list-group list-group-flush">
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/10/24/React 笔记/">React 笔记</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/09/19/ecma-script6入门 笔记 /">《ECMAScript 6 入门》笔记</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/09/18/git 笔记/">Git笔记</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/09/17/hello-world/">Hello World</a>
+                </span>
+            </li>
+            
+        </ul>
+    </div>
+</aside>
+    
+    
+    <aside id="sidebar-rand_posts">
+    <div class="panel panel-gal recent hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+        <div class="panel-heading">
+            <i class="fa fa-refresh"></i>
+            随机文章
+            <i class="fa fa-times-circle panel-remove"></i>
+            <i class="fa fa-chevron-circle-up panel-toggle"></i>
+        </div>
+        <ul class="list-group list-group-flush">
+            
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/09/18/git 笔记/">Git笔记</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/09/17/hello-world/">Hello World</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/10/24/React 笔记/">React 笔记</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/09/19/ecma-script6入门 笔记 /">《ECMAScript 6 入门》笔记</a>
+                </span>
+            </li>
+            
+        </ul>
+    </div>
+</aside>
+    
+    
+    <aside id="gal-sets">
+        <div class="panel panel-gal hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+            <ul class="nav nav-pills pills-gal">
+
+                
+                <li>
+                    <a href="/2019/10/24/React 笔记/index.html#sidebar-tags" data-toggle="tab" id="tags-tab">热门标签</a>
+                </li>
+                
+                
+                <li>
+                    <a href="/2019/10/24/React 笔记/index.html#sidebar-friend-links" data-toggle="tab" id="friend-links-tab">友情链接</a>
+                </li>
+                
+                
+                <li>
+                    <a href="/2019/10/24/React 笔记/index.html#sidebar-links" data-toggle="tab" id="links-tab">个人链接</a>
+                </li>
+                
+            </ul>
+            <div class="tab-content">
+                
+                <div class="cloud-tags tab-pane nav bs-sidenav fade" id="sidebar-tags">
+    
+    <a href="/tags/git/" style="font-size: 16.653408522987068px;" class="tag-cloud-link">git</a>
+    
+    <a href="/tags/bash/" style="font-size: 10.326891135241464px;" class="tag-cloud-link">bash</a>
+    
+    <a href="/tags/ES6/" style="font-size: 15.701170231438379px;" class="tag-cloud-link">ES6</a>
+    
+    <a href="/tags/ECMAScript-6/" style="font-size: 18.584090356691565px;" class="tag-cloud-link">ECMAScript 6</a>
+    
+    <a href="/tags/阮一峰/" style="font-size: 15.222407245431688px;" class="tag-cloud-link">阮一峰</a>
+    
+    <a href="/tags/React/" style="font-size: 18.921768865656215px;" class="tag-cloud-link">React</a>
+    
+</div>
+                
+                
+                <div class="friend-links tab-pane nav bs-sidenav fade" id="sidebar-friend-links">
+    
+    <li>
+        <a href="http://nav.web-hub.cn/" target="_blank">前端网站导航</a>
+    </li>
+    
+    <li>
+        <a href="http://www.ruanyifeng.com/home.html" target="_blank">阮一峰</a>
+    </li>
+    
+</div>
+                
+                
+                <div class="links tab-pane nav bs-sidenav fade" id="sidebar-links">
+    
+    <li>
+        <a href="https://github.com/Sheng1024" target="_blank">Github</a>
+    </li>
+    
+</div>
+                
+            </div>
+        </div>
+    </aside>
+    
+</aside>
+            </div>
+        </div>
+    </div>
+    <footer id="gal-footer">
+    <div class="container">
+        Copyright © 2018 Sheng1024 Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>.&nbsp;Theme by <a href="https://github.com/ZEROKISEKI" target="_blank">AONOSORA</a>
+    </div>
+</footer>
+
+<!-- 回到顶端 -->
+<div id="gal-gotop">
+    <i class="fa fa-angle-up"></i>
+</div>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/shizuku.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":false},"log":false});</script></body>
+<script src="/js/activate-power-mode.js"></script>
+<script>
+
+    // 配置highslide
+	hs.graphicsDir = '/js/highslide/graphics/'
+    hs.outlineType = "rounded-white";
+    hs.dimmingOpacity = 0.8;
+    hs.outlineWhileAnimating = true;
+    hs.showCredits = false;
+    hs.captionEval = "this.thumb.alt";
+    hs.numberPosition = "caption";
+    hs.align = "center";
+    hs.transitions = ["expand", "crossfade"];
+    hs.lang.number = '共%2张图, 当前是第%1张';
+    hs.addSlideshow({
+      interval: 5000,
+      repeat: true,
+      useControls: true,
+      fixedControls: "fit",
+      overlayOptions: {
+        opacity: 0.75,
+        position: "bottom center",
+        hideOnMouseOut: true
+      }
+    })
+
+    // 初始化aos
+    AOS.init({
+      duration: 1000,
+      delay: 0,
+      easing: 'ease-out-back'
+    });
+
+</script>
+<script>
+	POWERMODE.colorful = 'true';    // make power mode colorful
+	POWERMODE.shake = 'true';       // turn off shake
+	// TODO 这里根据具体情况修改
+	document.body.addEventListener('input', POWERMODE);
+</script>
+<script>
+    window.slideConfig = {
+      prefix: '/imgs/slide/background',
+      ext: 'jpg',
+      maxCount: '6'
+    }
+</script>
+<script src="/js/hs.js"></script>
+<script src="/js/blog.js"></script>
+
+
+
+</html>
