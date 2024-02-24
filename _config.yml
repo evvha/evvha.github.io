@@ -2,10 +2,10 @@ title: Evvha Blog
 subtitle: ''
 description: ''
 keywords: null
-author: John Doe
-language: en
+author: Evvha
+language: zh-CN
 timezone: ''
-url: http://example.com
+url: http://evha.com
 permalink: ':year/:month/:day/:title/'
 permalink_defaults: null
 pretty_urls:
